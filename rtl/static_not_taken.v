@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // static_not_taken.v -- Baseline predictor: always predicts NOT TAKEN.
 // Owner: Arun  |  Project 5: Dynamic Branch Prediction Unit
 // It needs no state and no table, so the fetch stage simply continues

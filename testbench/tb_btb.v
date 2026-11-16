@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // tb_btb.v -- directed tests for the Branch Target Buffer.
 // Owner: Keshav  |  Project 5: Dynamic Branch Prediction Unit
 //   1. reset: every lookup misses

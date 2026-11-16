@@ -960,10 +960,7 @@ Found matching posedge clock domain: \clk, enabled by $memory\u_predictor.u_btb.
 11.24.20. Extracting gate netlist of module `\bpu_top' to `<abc-temp-dir>/input.blif'..
 Found matching posedge clock domain: \clk, enabled by $memory\u_predictor.u_btb.tag_mem$wren[14][0][0]$y$586
 
-11.24.21. Extracting gate netlist of module `\bpu_top' to `<abc-temp-dir>/input.blif'..
-Found matching posedge clock domain: \clk, enabled by $memory\u_predictor.u_btb.tag_mem$wren[15][0][0]$y$592
-
-11.24.21.1. Executed ABC.
+11.24.20.1. Executed ABC.
 Extracted 105 gates and 137 wires to a netlist network with 31 inputs and 19 outputs.
 Running ABC script: <abc-temp-dir>/abc.script
 ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
@@ -984,7 +981,7 @@ ABC: + &nf
 ABC: + &put 
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
-11.24.21.2. Re-integrating ABC results.
+11.24.20.2. Re-integrating ABC results.
 ABC RESULTS:               AND cells:       27
 ABC RESULTS:            ANDNOT cells:       12
 ABC RESULTS:               MUX cells:        9
@@ -998,6 +995,9 @@ ABC RESULTS:        internal signals:       87
 ABC RESULTS:           input signals:       31
 ABC RESULTS:          output signals:       19
 Removing temp directory.
+
+11.24.21. Extracting gate netlist of module `\bpu_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $memory\u_predictor.u_btb.tag_mem$wren[15][0][0]$y$592
 
 11.24.21.1. Executed ABC.
 Extracted 419 gates and 645 wires to a netlist network with 226 inputs and 162 outputs.
@@ -1680,6 +1680,6 @@ Longest topological path in bpu_top (length=31):
    31: $auto$alumacc.cc:578:replace_alu$376.Y [31] (via $abc$4641$blif$4641$31)
    ff: \u_flush.branch_count [31] (via $auto$ff.cc:337:slice$649)
 
-End of script. Logfile hash: a975bb88c3, time: 0.66s, user: 0.16s, system: 0.04s, MEM: 30.39 MB peak
+End of script. Logfile hash: cf0ff11bbd, time: 0.40s, user: 0.16s, system: 0.04s, MEM: 31.20 MB peak
 Yosys 0.71+post (git sha1 5628c13240f670b97aaaca3d47940c4afb8ff572, Release, AppleClang clang++ 21.0.0.21000401)
 Time spent: 88% 1x abc (1 sec), 2% 1x techmap (0 sec), ...

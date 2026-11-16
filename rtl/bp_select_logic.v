@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // bp_select_logic.v -- Branch prediction SELECTION logic.
 // Owner: Keshav  |  Project 5: Dynamic Branch Prediction Unit
 // Combines the direction predictor (BHT) and the Branch Target Buffer into

@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // tb_flush_ctrl.v -- directed tests for the pipeline flush/control interface.
 // Owner: Mayank  |  Project 5: Dynamic Branch Prediction Unit
 module tb_flush_ctrl;

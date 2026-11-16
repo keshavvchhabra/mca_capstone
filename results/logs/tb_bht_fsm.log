@@ -36,4 +36,4 @@ ok   00 + NT,NT stays 00: state=00 pred=0
 -- Part D: loop exit / re-entry --
    steady-state misses per loop: 1-bit = 2, 2-bit = 1
 PASS tb_bht_fsm
-testbench/tb_bht_fsm.v:129: $finish called at 1420 (1s)
+testbench/tb_bht_fsm.v:130: $finish called at 1420000 (1ps)

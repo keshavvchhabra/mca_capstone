@@ -9,4 +9,4 @@ ok   6 target updated: pc=00400024 hit=1 target=00400100
 ok   7 no write when update_en=0: pc=00400030 hit=0 target=00000000
 ok   8 reset clears entries: pc=00400024 hit=0 target=00000000
 PASS tb_btb
-testbench/tb_btb.v:66: $finish called at 141 (1s)
+testbench/tb_btb.v:67: $finish called at 141000 (1ps)

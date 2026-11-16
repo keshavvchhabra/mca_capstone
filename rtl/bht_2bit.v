@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // bht_2bit.v -- Branch History Table of saturating counters (default 2-bit).
 // Owner: Arun  |  Project 5: Dynamic Branch Prediction Unit
 //   00 Strongly NT | 01 Weakly NT | 10 Weakly T | 11 Strongly T

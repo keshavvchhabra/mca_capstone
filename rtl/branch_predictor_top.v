@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // branch_predictor_top.v -- Dynamic Branch Prediction Unit (top level).
 // Owner: Keshav  |  Project 5: Dynamic Branch Prediction Unit
 //   SCHEME = 0 : static always-not-taken baseline

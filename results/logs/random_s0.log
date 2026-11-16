@@ -1,4 +1,4 @@
 RESULT name=random scheme=0 bht=16 branches=200 correct=90 mispred=110 btb_hits=199 penalty=220
   accuracy = 45.00 %   btb hit rate = 99.50 %
 PASS random scheme=0
-/Users/keshav./Desktop/mca_final_project/testbench/tb_predictor.v:152: $finish called at 2030 (1s)
+/Users/keshav./Desktop/mca_final_project/testbench/tb_predictor.v:153: $finish called at 2030000 (1ps)

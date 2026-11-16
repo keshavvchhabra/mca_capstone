@@ -25,4 +25,4 @@ ok   F EX flush wins: next_pc=00400300
    branches=7 mispredictions=4 penalty=8
 ok   G counters 7 / 4 / 8 cycles
 PASS tb_bpu_top
-testbench/tb_bpu_top.v:132: $finish called at 180 (1s)
+testbench/tb_bpu_top.v:133: $finish called at 180000 (1ps)

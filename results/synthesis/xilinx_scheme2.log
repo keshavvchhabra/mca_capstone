@@ -2429,6 +2429,6 @@ Found and reported 0 problems.
       200   OBUF
        11   RAM32M
 
-End of script. Logfile hash: 5bcefa4680, time: 2.43s, user: 2.28s, system: 0.05s, MEM: 170.55 MB peak
+End of script. Logfile hash: 5bcefa4680, time: 2.54s, user: 2.36s, system: 0.06s, MEM: 173.91 MB peak
 Yosys 0.71+post (git sha1 5628c13240f670b97aaaca3d47940c4afb8ff572, Release, AppleClang clang++ 21.0.0.21000401)
-Time spent: 71% 37x read_verilog (1 sec), 4% 12x techmap (0 sec), ...
+Time spent: 70% 37x read_verilog (1 sec), 4% 12x techmap (0 sec), ...

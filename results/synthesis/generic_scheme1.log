@@ -1731,6 +1731,6 @@ Longest topological path in bpu_top (length=31):
    31: $auto$alumacc.cc:578:replace_alu$420.Y [31] (via $abc$6141$blif$6141$31)
    ff: \u_flush.branch_count [31] (via $auto$ff.cc:337:slice$849)
 
-End of script. Logfile hash: 7b6e498e7f, time: 0.39s, user: 0.19s, system: 0.03s, MEM: 35.59 MB peak
+End of script. Logfile hash: 7b6e498e7f, time: 0.39s, user: 0.20s, system: 0.03s, MEM: 36.73 MB peak
 Yosys 0.71+post (git sha1 5628c13240f670b97aaaca3d47940c4afb8ff572, Release, AppleClang clang++ 21.0.0.21000401)
 Time spent: 87% 1x abc (1 sec), 2% 1x techmap (0 sec), ...

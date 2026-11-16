@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // btb.v -- Branch Target Buffer (direct-mapped).
 // Owner: Keshav  |  Project 5: Dynamic Branch Prediction Unit
 // Each entry stores {valid, tag, target}. Lookup is combinational:
