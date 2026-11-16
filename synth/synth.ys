@@ -1,0 +1,8 @@
+# synth.ys -- Yosys synthesis of the complete Branch Prediction Unit (bpu_top).
+# Owner: Keshav  |  Project 5: Dynamic Branch Prediction Unit
+# python/synth_report.py runs this once per scheme, replacing SCHEME_VALUE.
+read_verilog rtl/static_not_taken.v rtl/bht_1bit.v rtl/bht_2bit.v rtl/btb.v
+read_verilog rtl/bp_update_logic.v rtl/bp_select_logic.v rtl/branch_predictor_top.v
+read_verilog rtl/flush_ctrl.v rtl/bpu_top.v
+chparam -set SCHEME SCHEME_VALUE bpu_top
+TARGET_COMMANDS
