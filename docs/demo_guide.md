@@ -44,10 +44,10 @@ The same `loop10` trace runs on all three schemes against the golden model: 10 %
 ## 5. Waveform (2 min) — Sarvesh / Mayank
 
 ```bash
-gtkwave results/waveforms/predictor_loop10.vcd results/waveforms/predictor.gtkw
+make view      # opens Surfer with clk, pc, pred_taken, actual_taken, counter_state, flush, next_pc ...
 ```
 
-Point at branch 0 (cold miss, `flush` pulse), branch 9 (loop exit: counter `11 → 10`, `flush`) and branch 10 (re-entry predicted correctly with counter `10`). If GTKWave is not installed, use the table in `docs/report.md` §7.4.
+Point at branch 0 (cold miss, `flush` pulse), branch 9 (loop exit: counter `11 → 10`, `flush`) and branch 10 (re-entry predicted correctly with counter `10`). If no viewer is installed (`brew install surfer`), use the table in `docs/report.md` §7.4.
 
 ## 6. Golden model and full regression (1 min) — Rohit
 

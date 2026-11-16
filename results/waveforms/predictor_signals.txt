@@ -1,0 +1,16 @@
+# Surfer command file: key signals of the 2-bit predictor on the loop10 trace
+variable_add tb_predictor.clk
+variable_add tb_predictor.rst
+variable_add tb_predictor.pc
+variable_add tb_predictor.pred_taken
+variable_add tb_predictor.actual_taken
+variable_add tb_predictor.counter_state
+variable_add tb_predictor.btb_hit
+variable_add tb_predictor.pred_target
+variable_add tb_predictor.mispredict
+variable_add tb_predictor.flush
+variable_add tb_predictor.correct_pc
+variable_add tb_predictor.next_pc
+variable_add tb_predictor.mispredict_count
+variable_add tb_predictor.penalty_cycles
+zoom_fit
