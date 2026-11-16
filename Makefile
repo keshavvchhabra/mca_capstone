@@ -68,6 +68,7 @@ wave: | $(BUILD) $(WAVES)
 	$(VVP) $(BUILD)/tb_bht_fsm.vvp +VCD > /dev/null
 	$(IVERILOG) -o $(BUILD)/tb_bpu_top.vvp testbench/tb_bpu_top.v $(RTL)
 	$(VVP) $(BUILD)/tb_bpu_top.vvp +VCD > /dev/null
+	$(PY) python/plot_waveform.py > /dev/null
 	@ls -1 $(WAVES)/*.vcd
 	@echo "view: make view   (or: gtkwave $(WAVES)/predictor_loop10.vcd $(WAVES)/predictor.gtkw)"
 
