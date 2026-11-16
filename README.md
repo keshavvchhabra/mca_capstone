@@ -8,6 +8,11 @@ Buffer and a pipeline flush/control interface. Every strategy is verified
 against a Python golden model on loop-oriented BEQ/BNE traces and compared
 by accuracy, misprediction rate and CPI.
 
+## Demo video
+
+Recorded demonstration of the project (simulation, results and waveform):
+[Google Drive folder](https://drive.google.com/drive/folders/1NppOX3bq9f8_LaycY3cxD-MViNz5tWO8?usp=sharing) (`combined.mp4`).
+
 ## Team
 
 | Member | Part | Source files |
