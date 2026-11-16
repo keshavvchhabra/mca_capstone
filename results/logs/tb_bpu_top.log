@@ -1,0 +1,28 @@
+-- A. cold branch --
+ok   A pred NT (counter 01), BTB miss
+ok   A flush, dir mispredict
+ok   A next_pc = real target 00400000
+-- B. trained branch --
+ok   B pred T (counter 10), BTB hit
+ok   B no flush
+ok   B next_pc = BTB target
+-- C. loop exit --
+ok   C pred T (counter 11), actual NT
+ok   C flush, correct_pc = pc+4
+ok   C next_pc = 00400014
+-- D. target misprediction through BHT aliasing --
+ok   D pred T from shared counter
+ok   D BTB miss -> pred_target = pc+4
+ok   D target mispredict + flush
+ok   D next_pc = real target 00400400
+ok   D' BTB now hits with new target
+-- E. non-branch instruction --
+ok   E no prediction, next_pc = pc+4
+-- F. flush priority --
+ok   F IF predicts T to 00400400
+ok   F EX flush wins: next_pc=00400300
+-- G. counters --
+   branches=7 mispredictions=4 penalty=8
+ok   G counters 7 / 4 / 8 cycles
+PASS tb_bpu_top
+testbench/tb_bpu_top.v:132: $finish called at 180 (1s)

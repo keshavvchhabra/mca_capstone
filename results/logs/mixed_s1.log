@@ -1,0 +1,4 @@
+RESULT name=mixed scheme=1 bht=16 branches=240 correct=123 mispred=117 btb_hits=233 penalty=234
+  accuracy = 51.25 %   btb hit rate = 97.08 %
+PASS mixed scheme=1
+/Users/keshav./Desktop/mca_final_project/testbench/tb_predictor.v:152: $finish called at 2430 (1s)

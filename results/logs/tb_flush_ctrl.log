@@ -1,0 +1,8 @@
+ok   NT predicted, NT actual: flush=0 correct_pc=00400028
+ok   T  predicted, T  actual: flush=0 correct_pc=00400010
+ok   NT predicted, T  actual: flush=1 correct_pc=00400010
+ok   T  predicted, NT actual: flush=1 correct_pc=00400028
+ok   T  predicted, wrong tgt: flush=1 correct_pc=00400010
+ok   counters: branches=5 mispred=3 penalty=6 cycles
+PASS tb_flush_ctrl
+testbench/tb_flush_ctrl.v:56: $finish called at 130 (1s)
