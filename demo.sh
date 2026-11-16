@@ -3,17 +3,20 @@
 #  demo.sh -- live demonstration of the Dynamic Branch Prediction Unit
 #  Project 5, MCA (Modern Computer Architecture)
 #
-#  usage:  ./demo.sh          step by step, press Enter to continue
-#          ./demo.sh --auto   run every step without pausing
-#          ./demo.sh 5        start at step 5
+#  usage:  ./demo.sh                3-minute demo (5 steps), press Enter to continue
+#          ./demo.sh --full         full 10-step demo (about 12 minutes)
+#          ./demo.sh --auto         run without pausing (combine with --full)
+#          ./demo.sh 3              start at step 3
 # =============================================================================
 cd "$(dirname "$0")" || exit 1
 
 AUTO=0
+FULL=0
 START=1
 for arg in "$@"; do
   case "$arg" in
     --auto) AUTO=1 ;;
+    --full) FULL=1 ;;
     [0-9]*) START=$arg ;;
   esac
 done
@@ -42,6 +45,75 @@ pause() {
   read -r -p "${DIM}Press Enter for the next step...${RESET}" _
 }
 
+# =============================================================================
+#  3-MINUTE DEMO (default)
+# =============================================================================
+if [ "$FULL" -eq 0 ]; then
+
+if step 1 "The design  (0:00 - 0:30)" \
+"A dynamic branch prediction unit in synthesizable Verilog: 3 predictors,
+a Branch Target Buffer and pipeline flush control."; then
+  echo "  bpu_top                      complete unit                (Mayank)"
+  echo "  |-- branch_predictor_top     predicts in the IF stage     (Keshav)"
+  echo "  |   |-- static_not_taken | bht_1bit | bht_2bit            (Arun)"
+  echo "  |   |-- btb                  branch target buffer         (Keshav)"
+  echo "  |   \`-- bp_update_logic, bp_select_logic                  (Keshav)"
+  echo "  \`-- flush_ctrl               checks the guess in EX       (Mayank)"
+  run "make -s lint"
+  pause
+fi
+
+if step 2 "Unit tests: the 2-bit state machine  (0:30 - 1:00)" \
+"All 8 transitions of the 2-bit counter, saturation, BTB and flush control."; then
+  run "make -s unit 2>&1 | grep -E '^(PASS|FAIL)'"
+  run "grep 'steady-state' results/logs/tb_bht_fsm.log"
+  pause
+fi
+
+if step 3 "Same loop, three predictors  (1:00 - 1:40)" \
+"A 10-iteration loop run 10 times, simulated in Verilog and checked against
+the Python golden model."; then
+  mkdir -p build
+  for s in 0 1 2; do
+    python3 python/ref_model.py traces/loop10.csv $s build/demo_s$s.exp > /dev/null
+    iverilog -g2005 -Ptb_predictor.SCHEME=$s -o build/demo_s$s.vvp testbench/tb_predictor.v rtl/*.v
+    name=$(echo 'Static not-taken|1-bit BHT       |2-bit BHT       ' | cut -d'|' -f$((s+1)))
+    out=$(vvp -n build/demo_s$s.vvp +TRACE=traces/loop10.csv +EXP=build/demo_s$s.exp +NAME=loop10)
+    acc=$(echo "$out" | awk '/accuracy =/{print $3}')
+    res=$(echo "$out" | grep -oE '^(PASS|FAIL)')
+    echo "  ${BOLD}$name${RESET}  accuracy $acc %   ${GREEN}$res${RESET} (matches golden model)"
+  done
+  pause
+fi
+
+if step 4 "All traces: accuracy and CPI  (1:40 - 2:10)" \
+"8 traces x 3 predictors, every prediction compared with the golden model.
+CPI = 1 + 0.2 x misprediction rate x 2 cycles."; then
+  run "python3 python/run_regression.py | tail -1"
+  python3 python/analyze.py > /dev/null
+  run "sed -n '/## 1\./,/## 2\./p' results/accuracy_table.md | grep '^|' | cut -d'|' -f2,5,6,8,9"
+  pause
+fi
+
+if step 5 "Waveform in Surfer  (2:10 - 3:00)" \
+"Branch 0 at 21 ns: cold miss, flush.  Branch 9 at 111 ns: loop exit, flush,
+counter 11 -> 10.  Branch 10 at 121 ns: re-entry predicted correctly."; then
+  make -s wave > /dev/null
+  if [ "$AUTO" -eq 0 ] && command -v surfer >/dev/null; then
+    run "surfer results/waveforms/predictor_loop10.vcd -c results/waveforms/predictor_signals.txt > /dev/null 2>&1 &"
+  else
+    echo "Open it with:  make view"
+  fi
+fi
+
+echo
+echo "${GREEN}${BOLD}Demo complete.${RESET}  (Full 10-step version: ./demo.sh --full)"
+exit 0
+fi
+
+# =============================================================================
+#  FULL DEMO (--full)
+# =============================================================================
 # ---------------------------------------------------------------------------
 if step 1 "Check the tools" \
 "Icarus Verilog simulates the hardware, Python generates traces and analyses
