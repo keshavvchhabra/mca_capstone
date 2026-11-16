@@ -1797,7 +1797,7 @@ ABC: + &write -n <abc-temp-dir>/output.aig
 ABC: + &verify 
 ABC: Networks are equivalent.  Time =     0.01 sec
 ABC: + time 
-ABC: elapse: 0.04 seconds, total: 0.04 seconds
+ABC: elapse: 0.05 seconds, total: 0.05 seconds
 
 11.49.15.6. Executing AIGER frontend.
 <suppressed ~10 debug messages>
@@ -2029,6 +2029,6 @@ Found and reported 0 problems.
       200   OBUF
         5   RAM32M
 
-End of script. Logfile hash: d6ef90b13b, time: 2.56s, user: 2.31s, system: 0.08s, MEM: 137.97 MB peak
+End of script. Logfile hash: cf395860be, time: 2.43s, user: 2.27s, system: 0.07s, MEM: 137.89 MB peak
 Yosys 0.71+post (git sha1 5628c13240f670b97aaaca3d47940c4afb8ff572, Release, AppleClang clang++ 21.0.0.21000401)
-Time spent: 74% 37x read_verilog (1 sec), 4% 13x design (0 sec), ...
+Time spent: 73% 37x read_verilog (1 sec), 5% 13x design (0 sec), ...

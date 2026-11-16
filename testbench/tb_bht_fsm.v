@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // tb_bht_fsm.v -- directed state-transition tests for the 1-bit and 2-bit BHT.
 // Owner: Arun  |  Project 5: Dynamic Branch Prediction Unit
 //   Part A: all 8 transitions of the 2-bit FSM (4 states x 2 inputs)

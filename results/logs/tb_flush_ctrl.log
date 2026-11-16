@@ -5,4 +5,4 @@ ok   T  predicted, NT actual: flush=1 correct_pc=00400028
 ok   T  predicted, wrong tgt: flush=1 correct_pc=00400010
 ok   counters: branches=5 mispred=3 penalty=6 cycles
 PASS tb_flush_ctrl
-testbench/tb_flush_ctrl.v:56: $finish called at 130 (1s)
+testbench/tb_flush_ctrl.v:57: $finish called at 130000 (1ps)

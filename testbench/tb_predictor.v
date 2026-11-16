@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // tb_predictor.v -- trace-driven, self-checking system testbench for bpu_top.
 // Owner: Sarvesh  |  Project 5: Dynamic Branch Prediction Unit
 //

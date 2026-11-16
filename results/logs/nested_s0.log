@@ -1,4 +1,4 @@
 RESULT name=nested scheme=0 bht=16 branches=50 correct=11 mispred=39 btb_hits=48 penalty=78
   accuracy = 22.00 %   btb hit rate = 96.00 %
 PASS nested scheme=0
-/Users/keshav./Desktop/mca_final_project/testbench/tb_predictor.v:152: $finish called at 530 (1s)
+/Users/keshav./Desktop/mca_final_project/testbench/tb_predictor.v:153: $finish called at 530000 (1ps)

@@ -1,4 +1,4 @@
 RESULT name=multi_alias scheme=2 bht=16 branches=250 correct=138 mispred=112 btb_hits=147 penalty=224
   accuracy = 55.20 %   btb hit rate = 58.80 %
 PASS multi_alias scheme=2
-/Users/keshav./Desktop/mca_final_project/testbench/tb_predictor.v:152: $finish called at 2530 (1s)
+/Users/keshav./Desktop/mca_final_project/testbench/tb_predictor.v:153: $finish called at 2530000 (1ps)

@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // bpu_top.v -- Complete Branch Prediction Unit as seen by a 5-stage pipeline.
 // Owner: Mayank  |  Project 5: Dynamic Branch Prediction Unit
 //

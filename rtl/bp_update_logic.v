@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // bp_update_logic.v -- Branch prediction UPDATE logic.
 // Owner: Keshav  |  Project 5: Dynamic Branch Prediction Unit
 // Decides which tables are written when a branch resolves in the EX stage:

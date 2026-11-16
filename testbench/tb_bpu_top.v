@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // tb_bpu_top.v -- directed pipeline-level tests of the integrated bpu_top.
 // Owner: Mayank  |  Project 5: Dynamic Branch Prediction Unit
 // Uses the 2-bit scheme with a 16-entry BHT and BTB.

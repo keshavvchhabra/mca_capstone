@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // bht_1bit.v -- Branch History Table with one history bit per entry.
 // Owner: Arun  |  Project 5: Dynamic Branch Prediction Unit
 //   bit = 0 : predict NOT TAKEN      bit = 1 : predict TAKEN

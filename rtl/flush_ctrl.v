@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // flush_ctrl.v -- Pipeline flush / control interface.
 // Owner: Mayank  |  Project 5: Dynamic Branch Prediction Unit
 // When a branch resolves (resolve_en), compare the prediction made at fetch
