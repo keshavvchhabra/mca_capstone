@@ -1,0 +1,39 @@
+ok   reset 2-bit = 01: state=01 pred=0
+ok   reset 1-bit = 0
+-- Part A: 2-bit transitions --
+ok     start state: state=00 pred=0
+   00 --NT--> expect 00
+ok     next state: state=00 pred=0
+ok     start state: state=00 pred=0
+   00 --T --> expect 01
+ok     next state: state=01 pred=0
+ok     start state: state=01 pred=0
+   01 --NT--> expect 00
+ok     next state: state=00 pred=0
+ok     start state: state=01 pred=0
+   01 --T --> expect 10
+ok     next state: state=10 pred=1
+ok     start state: state=10 pred=1
+   10 --NT--> expect 01
+ok     next state: state=01 pred=0
+ok     start state: state=10 pred=1
+   10 --T --> expect 11
+ok     next state: state=11 pred=1
+ok     start state: state=11 pred=1
+   11 --NT--> expect 10
+ok     next state: state=10 pred=1
+ok     start state: state=11 pred=1
+   11 --T --> expect 11
+ok     next state: state=11 pred=1
+-- Part B: saturation --
+ok   11 + T,T stays 11: state=11 pred=1
+ok   00 + NT,NT stays 00: state=00 pred=0
+-- Part C: 1-bit transitions --
+   0 --NT--> 0
+   0 --T --> 1
+   1 --T --> 1
+   1 --NT--> 0
+-- Part D: loop exit / re-entry --
+   steady-state misses per loop: 1-bit = 2, 2-bit = 1
+PASS tb_bht_fsm
+testbench/tb_bht_fsm.v:129: $finish called at 1420 (1s)

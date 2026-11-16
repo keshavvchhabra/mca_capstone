@@ -1,0 +1,4 @@
+RESULT name=loop10 scheme=2 bht=16 branches=100 correct=89 mispred=11 btb_hits=99 penalty=22
+  accuracy = 89.00 %   btb hit rate = 99.00 %
+PASS loop10 scheme=2
+/Users/keshav./Desktop/mca_final_project/testbench/tb_predictor.v:152: $finish called at 1030 (1s)

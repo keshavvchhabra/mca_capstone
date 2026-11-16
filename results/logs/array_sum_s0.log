@@ -1,0 +1,4 @@
+RESULT name=array_sum scheme=0 bht=16 branches=16 correct=6 mispred=10 btb_hits=13 penalty=20
+  accuracy = 37.50 %   btb hit rate = 81.25 %
+PASS array_sum scheme=0
+/Users/keshav./Desktop/mca_final_project/testbench/tb_predictor.v:152: $finish called at 190 (1s)

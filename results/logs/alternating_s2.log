@@ -1,0 +1,4 @@
+RESULT name=alternating scheme=2 bht=16 branches=100 correct=0 mispred=100 btb_hits=99 penalty=200
+  accuracy = 0.00 %   btb hit rate = 99.00 %
+PASS alternating scheme=2
+/Users/keshav./Desktop/mca_final_project/testbench/tb_predictor.v:152: $finish called at 1030 (1s)

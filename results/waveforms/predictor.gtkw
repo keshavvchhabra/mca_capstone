@@ -1,0 +1,28 @@
+[dumpfile] "results/waveforms/predictor_loop10.vcd"
+[timestart] 0
+[sst_width] 220
+[signals_width] 230
+@28
+tb_predictor.clk
+tb_predictor.rst
+@22
+tb_predictor.pc[31:0]
+@28
+tb_predictor.pred_taken
+tb_predictor.actual_taken
+@22
+tb_predictor.counter_state[1:0]
+@28
+tb_predictor.btb_hit
+@22
+tb_predictor.pred_target[31:0]
+tb_predictor.actual_target[31:0]
+@28
+tb_predictor.mispredict
+tb_predictor.flush
+@22
+tb_predictor.correct_pc[31:0]
+tb_predictor.next_pc[31:0]
+@24
+tb_predictor.mispredict_count[31:0]
+tb_predictor.penalty_cycles[31:0]
