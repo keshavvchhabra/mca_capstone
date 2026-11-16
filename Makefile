@@ -10,7 +10,7 @@ RTL      := $(sort $(wildcard rtl/*.v))
 LOGS     := results/logs
 WAVES    := results/waveforms
 
-.PHONY: help all traces unit regression sweep test wave report synth demo lint clean distclean
+.PHONY: help all traces unit regression sweep test wave view report synth demo lint clean distclean
 
 help:
 	@echo "make traces      generate branch traces (traces/*.csv)"
@@ -18,6 +18,7 @@ help:
 	@echo "make regression  every trace x every scheme vs the Python golden model"
 	@echo "make test        traces + unit + regression + BHT-size sweep"
 	@echo "make wave        dump VCD waveforms into results/waveforms/"
+	@echo "make view        open the predictor waveform in the Surfer viewer"
 	@echo "make report      accuracy / misprediction / CPI tables and charts"
 	@echo "make synth       Yosys synthesis of all three schemes"
 	@echo "make all         test + wave + report + synth"
@@ -68,7 +69,12 @@ wave: | $(BUILD) $(WAVES)
 	$(IVERILOG) -o $(BUILD)/tb_bpu_top.vvp testbench/tb_bpu_top.v $(RTL)
 	$(VVP) $(BUILD)/tb_bpu_top.vvp +VCD > /dev/null
 	@ls -1 $(WAVES)/*.vcd
-	@echo "view: gtkwave $(WAVES)/predictor_loop10.vcd $(WAVES)/predictor.gtkw"
+	@echo "view: make view   (or: gtkwave $(WAVES)/predictor_loop10.vcd $(WAVES)/predictor.gtkw)"
+
+# ---- open the waveform in Surfer (brew install surfer) ---------------------
+view:
+	@test -f $(WAVES)/predictor_loop10.vcd || $(MAKE) wave
+	surfer $(WAVES)/predictor_loop10.vcd -c $(WAVES)/predictor_signals.txt
 
 # ---- Sarvesh: analysis -----------------------------------------------------
 report:

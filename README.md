@@ -27,7 +27,7 @@ Each member's detailed work guide is in `docs/team/<Name>.md`.
 | Icarus Verilog 11+ (`iverilog`, `vvp`) | RTL simulation | `brew install icarus-verilog` |
 | Python 3.8+ and matplotlib | traces, golden model, analysis, charts | `pip3 install -r requirements.txt` |
 | Yosys (optional) | synthesis / resource report | `brew install yosys` |
-| GTKWave (optional) | view waveforms | `brew install --cask gtkwave` |
+| Surfer or GTKWave (optional) | view waveforms | `brew install surfer` |
 
 On Ubuntu: `sudo apt install iverilog yosys gtkwave python3-matplotlib`.
 
@@ -42,8 +42,8 @@ make demo      # short live demonstration (about 10 seconds)
 make all       # everything above
 ```
 
-Open a waveform:
-`gtkwave results/waveforms/predictor_loop10.vcd results/waveforms/predictor.gtkw`
+Open a waveform: `make view` (Surfer, with the key signals pre-loaded).
+With GTKWave instead: `gtkwave results/waveforms/predictor_loop10.vcd results/waveforms/predictor.gtkw`
 
 ## Architecture
 
