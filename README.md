@@ -13,6 +13,13 @@ by accuracy, misprediction rate and CPI.
 Recorded demonstration of the project (simulation, results and waveform):
 [Google Drive folder](https://drive.google.com/drive/folders/1NppOX3bq9f8_LaycY3cxD-MViNz5tWO8?usp=sharing) (`combined.mp4`).
 
+## Presentation
+
+[`docs/Project_Presentation.pptx`](docs/Project_Presentation.pptx) — 14-slide PowerPoint deck for the viva:
+problem, the three predictors, the 2-bit state machine, architecture, verification,
+accuracy and CPI results, waveform, aliasing study, synthesis, team and conclusion.
+Every slide has speaker notes.
+
 ## Team
 
 | Member | Part | Source files |
